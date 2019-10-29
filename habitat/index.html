@@ -5,12 +5,16 @@
 <title>Habitat</title>
 <style>
 /* STYLE SHEET FOR INDEX.HTM */
+ @font-face {
+ font-family: oregonfont;
+ src: url("../images/oregon book.ttf");
+   }
 article {
    padding: 10%
 }
 body {
-   font-size: 80%;
-   font-family: arial, helvetica, geneva, sans-serif;
+   font-family: oregonfont; 
+   font-size: 85%;
    border-style: solid;
    border-width: 5px;
    border-color: #d8d88d8;
@@ -28,7 +32,6 @@ footer {
 }
 
 h1 {
-   font-family: arial, helvetica, geneva, sans-serif;
     margin-top: 5px;
    margin-bottom: 0px;
 }
@@ -45,11 +48,26 @@ nav {
    height: 1450px;
    padding-right: 150px;
    margin-right: 10px;
+   opacity: 0.8;
 }
-.floatright {
+section {                     
+   background-image: url("../images/globe.png");
+   background-repeat: no-repeat;
+   background-size: contain;
+}
+   .floatright {
    float: right;
    margin: 10px;
 }
+ .navlinks {
+   display: block;
+   border: 2px solid #a1a1a1;
+   padding: 2px 5px;
+   background: #add8e6;
+   border-radius: 5px;
+   text-decoration: none;
+   box-shadow: 5px 5px 5px #888888;
+} 
 
 </style>
 </head>
@@ -60,13 +78,11 @@ nav {
 </header>
 
 <nav>
+<p><a class="navlinks" href="http://www.habitat.org/how/about_us.aspx">Learn more</a></p>
+<p><a class="navlinks" href="http://www.habitat.org/getinv/volunteer_programs.aspx">Volunteer</a></p>
+<p><a class="navlinks"  href="http://www.habitat.org/gov">Advocate</a></p>
+<l><a class="navlinks" href="https://www.habitat.org/cd/giving/donate.aspx?r=r&amp;link=1">Donate</a></p>
 
-<ul>
-<li><a href="http://www.habitat.org/how/about_us.aspx">Learn more</a></li>
-<li><a href="http://www.habitat.org/getinv/volunteer_programs.aspx">Volunteer</a></li>
-<li><a href="http://www.habitat.org/gov">Advocate</a></li>
-<li><a href="https://www.habitat.org/cd/giving/donate.aspx?r=r&amp;link=1">Donate</a></li>
-</ul>
 </nav>
 
 <article>
