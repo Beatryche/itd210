@@ -7,7 +7,12 @@
 /* STYLE SHEET FOR INDEX.HTM */
  @font-face {
  font-family: oregonfont;
- src: url("../images/oregon book.ttf");
+ src: url("images/oregon book.ttf");
+}
+@keyframe logoanimation {
+    0% {left: 0px; top: 0px;}
+    50%{left: 200px; top: 0px;}
+    100%{left: 0px; top: 0px;}
 }
 article {
     padding: 10%;
@@ -45,12 +50,12 @@ nav {
     height: 1450px;
     padding-right: 150px;
     margin-right: 10px;
+    opacity: 0.8; 
 }
 section {                     
-    height: 400px;
     background-image: url("images/globe.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 .floatright {
     float: right;
@@ -64,13 +69,98 @@ section {
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 5px 5px 5px #888888;
-} 
+}
+#animation {
+    position: relative;
+
+    /* Chrome and Safari: */
+    -webkit-animation-name: logoanimation;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+
+    animation-name: logoanimation;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+#drop-menu {
+    width: 150px;
+    cursor: pointer;
+    display: block;
+    border: 2px solid #a1a1a1;
+    padding: 5px;
+    height: 20px;
+    max-height: 20px;
+    background: #add8e6;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: oregonfont;
+    font-weight: bold;
+    font-size: 85%;
+    color: #0000A0;
+}
+#drop-menu: hover {
+    border: 3px solid #bababa;
+}
+#drop-menu: hover .sub-menu {
+    display: inline-block; 
+}
+#img-rotate {
+    z-index: -1;
+    position: relative;
+    -ms-transform: rotate(345deg); /* IE9 */
+    -webkit-transform: rotate(345deg); /* Chrome and Safari */
+    transform: rotate(345deg); 
+}
+#video-rotate {
+    -ms-transform: rotate(15deg); /* IE9 */
+    -webkit-transform: rotate(15deg); /* Chrome and Safari */
+    transform: rotate(15deg);
+}
+.sub-menu {
+    display: none;
+    width: 150px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0, 0.2);
+    -moz-box-shadow: 5px 5px 5px rgba(0,0,0, 0.2);
+    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px rgba(0,0,0, 0.2);
+}
+.sub-menu li { 
+    list-style-type: none;
+    display: block;
+    border: 2px solid #add8e6; 
+    padding: 2px 5px; 
+    background: #d8d8d8;
+    border-radius: 5px;
+}
+.sub-menu li: hover { 
+    border: 3px solid #bababa; 
+}      
 </style>
 </head>
 <body>
 
 <header>
-<img src="images/logo.png" alt="Habitat for Humanity logo"/>
+<img id="animation" src="images/logo.png" alt="Habitat for Humanity logo"/>
+
+<div class="floatright" id="drop-menu">
+Choose a search engine
+<ul class="sub-menu">
+<li><a href="http://www.bing.com">Bing</a></li>
+<li><a href="http://www.google.com"> Google</a></li>
+<li><a href="http://www.yahoo.com">Yahoo!</a></li>
+</ul>
+</div>
+
 </header>
 
 <nav>
@@ -80,20 +170,20 @@ section {
 <p><a class="navlinks" href="https://www.habitat.org/cd/giving/donate.aspx?r=r&amp;link=1">Donate</a></p>
 </nav>
 
+<section>
+
 <article>
 <h1>Our Mission</h1>
 <p>Habitat for Humanity believes that every man, woman and child should have a decent, safe and affordable place to live. We build and repair houses all over the world using volunteer labor and donations. Our partner families purchase these houses through no-profit, no-interest mortgage loans or innovative financing methods.</p>
-<img class="floatright" src="images/habitat1.jpg" height="114" alt="Silhouettes of Habitat for Humanity workers"/>
+<img class="floatright" id="img-rotate" src="images/habitat1.jpg" height="114" alt="Silhouettes of Habitat for Humanity workers"/>
 </article>
 
-<section>
-</section>
 
 <article>
 <h1>Why We Build</h1>
 <p>There are nearly 2 billion people around the world who live in slum housing and more than 100 million are homeless. Families left homeless by natural disasters, war and civil unrest often face dire housing situations as they struggle to rebuild their lives. We provide shelter and housing assistance to help these families recover.</p>
 
-<video class="floatright" height="150"  controls="controls">
+<video class="floatright" id="video-rotate" height="150"  controls="controls">
 <source src="images/habitat_video_Web_720.mp4" type="video/mp4"/>
 </video>
 </article> 
@@ -113,6 +203,8 @@ section {
 </p>
 <p><a href="http://www.habitat.org/youthprograms/ages_14_25/ages_14_25_default.aspx" >Start today</a> to become the leaders of Habitat tomorrow!</p>
 </aside>
+
+</section>
 
 <footer>
 <a href="http://www.habitat.org/how/"> Learn About Habitat</a> |
